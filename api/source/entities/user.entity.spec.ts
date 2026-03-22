@@ -99,4 +99,16 @@ describe('User Entity', () => {
 
     vi.restoreAllMocks()
   })
+
+  it('should return correct name via getter', () => {
+    expect(user.name).toBe(name)
+  })
+
+  it('should return correct email via getter', () => {
+    expect(user.email).toBe(email.toLowerCase())
+  })
+
+  it('should return correct passwordHash via getter', () => {
+    expect(user.passwordHash).toBe(passwordHash)
+  })
 })

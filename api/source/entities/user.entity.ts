@@ -56,4 +56,16 @@ export class User {
   toJSON(): UserProps {
     return { ...this.props }
   }
+
+  get name(): string {
+    return this.props.name
+  }
+
+  get email(): string {
+    return this.props.email
+  }
+
+  get passwordHash(): string {
+    return this.props.passwordHash
+  }
 }

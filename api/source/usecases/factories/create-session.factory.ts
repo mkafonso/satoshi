@@ -4,7 +4,7 @@ import { SessionsRepositoryInterface } from '@/repositories/sessions.repository'
 import { UsersRepositoryInterface } from '@/repositories/users.repository'
 import { MemoryPasswordHasher } from '../../../__tests__/providers/memory-password-hasher.provider'
 import { MemoryTokenProvider } from '../../../__tests__/providers/memory-token.provider'
-import { MemorySessionsRepository } from '../../../__tests__/repositories/memory-sessions-repository'
+import { MemorySessionsRepository } from '../../../__tests__/repositories/memory-sessions.repository'
 import { MemoryUsersRepository } from '../../../__tests__/repositories/memory-users.repository'
 import { CreateSessionUsecase } from '../create-session.usecase'
 

@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { MemoryPasswordHasher } from '../../__tests__/providers/memory-password-hasher.provider'
 import { MemoryUsersRepository } from '../../__tests__/repositories/memory-users.repository'
 import { CreateAccountUsecase } from './create-account.usecase'
+import { makeCreateAccountUsecase } from './factories/create-account.factory'
 
 describe('CreateAccountUsecase', () => {
   let usecase: CreateAccountUsecase
@@ -9,9 +10,10 @@ describe('CreateAccountUsecase', () => {
   let passwordHasher: MemoryPasswordHasher
 
   beforeEach(() => {
-    usersRepository = new MemoryUsersRepository()
-    passwordHasher = new MemoryPasswordHasher()
-    usecase = new CreateAccountUsecase(usersRepository, passwordHasher)
+    usecase = makeCreateAccountUsecase()
+
+    usersRepository = (usecase as any).usersRepository
+    passwordHasher = (usecase as any).passwordHasherProvider
   })
 
   it('should create a new user successfully', async () => {
