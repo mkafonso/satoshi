@@ -1,7 +1,9 @@
 import 'dotenv/config'
 
-import { app } from './app'
+import { buildApp } from './app'
 import { env } from './helpers/env'
+
+const app = buildApp()
 
 app
   .listen({

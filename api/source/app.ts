@@ -1,3 +1,7 @@
 import fastify from 'fastify'
 
-export const app = fastify()
+export function buildApp() {
+  const app = fastify()
+
+  return app
+}
