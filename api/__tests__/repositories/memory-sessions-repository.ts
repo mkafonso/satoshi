@@ -1,7 +1,7 @@
 import { Session } from '@/entities/session.entity'
 import { SessionsRepositoryInterface } from '@/repositories/sessions.repository'
 
-export class InMemorySessionsRepository implements SessionsRepositoryInterface {
+export class MemorySessionsRepository implements SessionsRepositoryInterface {
   private items: Session[] = []
 
   async create(session: Session): Promise<void> {
