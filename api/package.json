@@ -1,13 +1,20 @@
 {
-  "name": "@satoshi/api",
-  "version": "0.1.0",
-  "main": "index.js",
-  "private": true,
-  "author": "mkafonso <mkafonso.dev@gmail.com>",
-  "scripts": {},
-  "devDependencies": {
-    "@types/node": "25.5.0",
-    "tsx": "4.21.0",
-    "typescript": "5.9.3"
-  }
+	"name": "@satoshi/api",
+	"version": "0.1.0",
+	"main": "index.js",
+	"private": true,
+	"author": "mkafonso <mkafonso.dev@gmail.com>",
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome format . --write"
+	},
+	"dependencies": {
+		"fastify": "5.8.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.8",
+		"@types/node": "25.5.0",
+		"tsx": "4.21.0",
+		"typescript": "5.9.3"
+	}
 }
