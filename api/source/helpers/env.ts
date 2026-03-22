@@ -1,18 +1,21 @@
 import 'dotenv/config'
-
 import { z } from 'zod'
 
-const schema = z.object({
+export const schema = z.object({
   PORT: z.coerce.number().default(3001),
-  NODE_ENV: z.enum(['dev', 'prd']).default('dev'),
+  NODE_ENV: z.enum(['dev', 'test', 'prd']).default('dev'),
 })
 
-const _env = schema.safeParse(process.env)
+export function parseEnv(env: NodeJS.ProcessEnv) {
+  const result = schema.safeParse(env)
 
-if (_env.success === false) {
-  console.error('Invalid environment variables', z.treeifyError(_env.error))
+  if (!result.success) {
+    console.error('Invalid environment variables', z.treeifyError(result.error))
 
-  throw new Error('Invalid environment variables')
+    throw new Error('Invalid environment variables')
+  }
+
+  return result.data
 }
 
-export const env = _env.data
+export const env = parseEnv(process.env)
