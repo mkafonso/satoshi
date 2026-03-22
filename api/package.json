@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch source/server.ts",
-    "build": "tsup source --out-dir build",
-    "start": "node build/server.js",
+    "build": "tsup source --out-dir dist",
+    "start": "node dist/server.js",
     "lint": "biome check .",
     "format": "biome format . --write"
   },
