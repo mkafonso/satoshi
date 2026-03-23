@@ -29,7 +29,7 @@ export function FeatureCardMain(props: FeatureCardMainProps) {
 
 				<div className="pt-4 flex gap-4">
 					{badges?.map((b: string) => (
-						<span key={b} className="px-4 py-2 rounded-full bg-white/10 text-xs font-mono">
+						<span key={b} className="px-4 py-2 rounded-full bg-white/10 text-xs">
 							{b}
 						</span>
 					))}

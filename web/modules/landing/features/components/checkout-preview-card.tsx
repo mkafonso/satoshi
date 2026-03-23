@@ -13,7 +13,7 @@ export function CheckoutPreviewCard() {
 			whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
 			transition={{ duration: 0.5 }}
 			viewport={{ once: true }}
-			className="flex-1 relative"
+			className="flex-1 relative max-w-md w-full"
 		>
 			<Card className="p-8 rounded-xl backdrop-blur-xl bg-white/70 dark:bg-muted/40 border shadow-2xl">
 				<div className="flex gap-6 items-start mb-8">
@@ -37,7 +37,7 @@ export function CheckoutPreviewCard() {
 				<div className="bg-muted rounded-xl p-4 flex justify-between items-center mb-2">
 					<div>
 						<p className="text-xs text-muted-foreground font-medium">Total Amount</p>
-						<p className="text-xl font-mono font-bold text-primary">{payment.amount}</p>
+						<p className="text-xl font-bold text-primary">{payment.amount}</p>
 					</div>
 
 					<div className="text-right">
@@ -53,7 +53,7 @@ export function CheckoutPreviewCard() {
 
 					<div>
 						<p className="text-sm font-bold text-green-800">Payment Confirmed</p>
-						<p className="text-sm text-green-600 font-mono">TXID: {payment.txid}</p>
+						<p className="text-sm text-green-600">TXID: {payment.txid}</p>
 					</div>
 				</div>
 

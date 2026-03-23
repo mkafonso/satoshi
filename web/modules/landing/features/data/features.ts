@@ -19,7 +19,7 @@ export const features: Feature[] = [
 		description:
 			'Your keys, your coins. SatoshiPay generates addresses from your extended public key (xPub).',
 		icon: Key,
-		className: 'md:col-span-4 bg-primary-container text-white',
+		className: 'md:col-span-4 text-white',
 	},
 	{
 		id: 'payment-links',

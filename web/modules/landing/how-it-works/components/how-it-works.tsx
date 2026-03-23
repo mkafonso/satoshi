@@ -15,9 +15,7 @@ export function HowItWorks() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-20 space-y-4"
 				>
-					<h2 className="font-mono text-4xl font-bold tracking-tight">
-						Three steps to sovereignty.
-					</h2>
+					<h2 className="text-4xl font-bold tracking-tight">Three steps to sovereignty.</h2>
 
 					<p className="text-muted-foreground text-lg max-w-2xl mx-auto">
 						Get up and running in minutes, not days. No credit checks or lengthy onboarding.

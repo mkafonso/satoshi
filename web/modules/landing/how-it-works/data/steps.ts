@@ -19,8 +19,9 @@ export const Steps: Step[] = [
 		description:
 			'Send the checkout link directly or embed it in your store. Works on any device or platform.',
 		icon: Share2,
-		iconWrapper: 'bg-amber-500/10 group-hover:bg-amber-500 group-hover:text-amber-500-foreground',
-		stepColor: 'text-amber-500',
+		iconWrapper:
+			'bg-violet-500/10 group-hover:bg-violet-500 group-hover:text-violet-500-foreground',
+		stepColor: 'text-violet-500',
 	},
 	{
 		id: 'get-paid',
