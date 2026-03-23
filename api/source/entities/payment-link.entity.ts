@@ -79,4 +79,28 @@ export class PaymentLink {
   get stock(): number {
     return this.props.stock
   }
+
+  get priceBtc(): number {
+    return this.props.priceBtc
+  }
+
+  get priceFiat(): number {
+    return this.props.priceFiat
+  }
+
+  get id(): string {
+    return this.props.id
+  }
+
+  get productId(): string {
+    return this.props.productId
+  }
+
+  get btcAddress(): string {
+    return this.props.btcAddress
+  }
+
+  get expiresAt(): Date {
+    return this.props.expiresAt
+  }
 }
