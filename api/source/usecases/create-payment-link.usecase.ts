@@ -11,7 +11,7 @@ type CreatePaymentLinkInput = {
   quantity: number
 }
 
-interface CreatePaymentLinkOutput {}
+type CreatePaymentLinkOutput = {}
 
 export class CreatePaymentLinkUsecase {
   constructor(

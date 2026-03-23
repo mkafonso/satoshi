@@ -9,7 +9,7 @@ type CreateAccountInput = {
   password: string
 }
 
-interface CreateAccountOutput {}
+type CreateAccountOutput = {}
 
 export class CreateAccountUsecase {
   constructor(

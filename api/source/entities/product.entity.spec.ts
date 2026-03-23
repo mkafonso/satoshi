@@ -9,8 +9,6 @@ describe('Product Entity', () => {
     title: 'Satoshi One Edition',
     description:
       'The Satoshi One features EAL6+ secure element chips and a custom-built OS for air-gapped signing. Designed for the sovereign individual who demands zero compromise on security.',
-    hardwareSpec:
-      'EAL6+ secure element chips and custom-built OS for air-gapped signing.',
     unitPriceBtc: 0.00342,
     unitPriceFiat: 159,
     stock: 5,
@@ -27,7 +25,6 @@ describe('Product Entity', () => {
     expect(json.userId).toBe(props.userId)
     expect(json.title).toBe(props.title)
     expect(json.description).toBe(props.description)
-    expect(json.hardwareSpec).toBe(props.hardwareSpec)
     expect(json.unitPriceBtc).toBe(props.unitPriceBtc)
     expect(json.unitPriceFiat).toBe(props.unitPriceFiat)
     expect(json.stock).toBe(props.stock)

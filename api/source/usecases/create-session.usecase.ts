@@ -25,8 +25,9 @@ export class CreateSessionUsecase {
   ) {}
 
   async execute(input: CreateSessionInput): Promise<CreateSessionOutput> {
-    const email = input.email.trim().toLowerCase()
-    const user = await this.usersRepository.findByEmail(email)
+    const data = this.sanitize(input)
+
+    const user = await this.usersRepository.findByEmail(data.email)
 
     if (!user) {
       throw new InvalidCredentialsError()
@@ -60,6 +61,13 @@ export class CreateSessionUsecase {
     const oldSessions = await this.sessionsRepository.findByUserId(userId)
     for (const session of oldSessions) {
       await this.sessionsRepository.delete(session.toJSON().id)
+    }
+  }
+
+  private sanitize(input: CreateSessionInput): CreateSessionInput {
+    return {
+      ...input,
+      email: input.email.trim().toLowerCase(),
     }
   }
 }

@@ -5,7 +5,6 @@ export type ProductProps = {
   userId: string
   title: string
   description: string
-  hardwareSpec: string
   unitPriceBtc: number
   unitPriceFiat: number
   stock: number
