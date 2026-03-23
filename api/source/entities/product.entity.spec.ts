@@ -122,4 +122,8 @@ describe('Product Entity', () => {
   it('should return correct id via getter', () => {
     expect(product.id).toBe(product.toJSON().id)
   })
+
+  it('should return correct deletedAt via getter', () => {
+    expect(product.deletedAt).toBe(product.toJSON().deletedAt)
+  })
 })

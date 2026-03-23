@@ -6,20 +6,18 @@ import { MemoryProductsRepository } from '../../__tests__/repositories/memory-pr
 import { PaymentLinkNotFoundError } from './errors/payment-link-not-found.error'
 import { ProductNotFoundError } from './errors/product-not-found.error'
 import { makeGetPaymentLinkDetailsUsecase } from './factories/get-payment-link-details.factory'
+import { GetPaymentLinkDetailsUsecase } from './get-payment-link-details.usecase'
 
 describe('GetPaymentLinkDetailsUsecase', () => {
   let productsRepository: MemoryProductsRepository
   let paymentLinksRepository: MemoryPaymentLinksRepository
-  let usecase: ReturnType<typeof makeGetPaymentLinkDetailsUsecase>
+  let usecase: GetPaymentLinkDetailsUsecase
 
   beforeEach(() => {
-    productsRepository = new MemoryProductsRepository()
-    paymentLinksRepository = new MemoryPaymentLinksRepository()
+    usecase = makeGetPaymentLinkDetailsUsecase()
 
-    usecase = makeGetPaymentLinkDetailsUsecase({
-      paymentLinksRepository,
-      productsRepository,
-    })
+    productsRepository = (usecase as any).productsRepository
+    paymentLinksRepository = (usecase as any).paymentLinksRepository
   })
 
   it('should return payment link details for a valid link', async () => {
