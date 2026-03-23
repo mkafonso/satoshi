@@ -95,4 +95,8 @@ export class Product {
   get description(): string {
     return this.props.description
   }
+
+  get deletedAt(): Date | null {
+    return this.props.deletedAt ?? null
+  }
 }
