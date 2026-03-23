@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { makeSession } from '../../__tests__/factories/session.factory'
 import { makeUser } from '../../__tests__/factories/user.factory'
 import { MemoryPasswordHasher } from '../../__tests__/providers/memory-password-hasher.provider'
-import { MemoryTokenProvider } from '../../__tests__/providers/memory-token.provider'
 import { MemorySessionsRepository } from '../../__tests__/repositories/memory-sessions.repository'
 import { MemoryUsersRepository } from '../../__tests__/repositories/memory-users.repository'
 import {
@@ -16,7 +15,6 @@ describe('CreateSessionUsecase', () => {
   let usersRepository: MemoryUsersRepository
   let sessionsRepository: MemorySessionsRepository
   let passwordHasher: MemoryPasswordHasher
-  let tokenProvider: MemoryTokenProvider
   let usecase: CreateSessionUsecase
 
   beforeEach(() => {
@@ -25,7 +23,6 @@ describe('CreateSessionUsecase', () => {
     usersRepository = (usecase as any).usersRepository
     sessionsRepository = (usecase as any).sessionsRepository
     passwordHasher = (usecase as any).passwordHasherProvider
-    tokenProvider = (usecase as any).tokenProvider
   })
 
   it('should create a new session for a valid user', async () => {

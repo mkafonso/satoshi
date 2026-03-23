@@ -1,6 +1,5 @@
-import { Product } from '@/entities/product.entity'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { MemoryPaymentLinksRepository } from '../../__tests__/repositories/memory-payment-links.repository'
+import { Product } from '@/entities/product.entity'
 import { MemoryProductsRepository } from '../../__tests__/repositories/memory-products.repository'
 import { DeleteProductUsecase } from './delete-product.usecase'
 import { ProductNotFoundError } from './errors/product-not-found.error'
@@ -8,14 +7,12 @@ import { makeDeleteProductUsecase } from './factories/delete-product.factory'
 
 describe('DeleteProductUsecase', () => {
   let productsRepository: MemoryProductsRepository
-  let paymentLinksRepository: MemoryPaymentLinksRepository
   let usecase: DeleteProductUsecase
 
   beforeEach(() => {
     usecase = makeDeleteProductUsecase()
 
     productsRepository = (usecase as any).productsRepository
-    paymentLinksRepository = (usecase as any).paymentLinksRepository
   })
 
   it('should soft delete a product', async () => {

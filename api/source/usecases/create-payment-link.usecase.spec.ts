@@ -1,6 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { makeProduct } from '../../__tests__/factories/product.factory'
-import { MemoryBtcAddressProvider } from '../../__tests__/providers/memory-btc-address.provider'
 import { MemoryPaymentLinksRepository } from '../../__tests__/repositories/memory-payment-links.repository'
 import { MemoryProductsRepository } from '../../__tests__/repositories/memory-products.repository'
 import { CreatePaymentLinkUsecase } from './create-payment-link.usecase'
@@ -11,7 +10,6 @@ import { makeCreatePaymentLinkUsecase } from './factories/create-payment-link.fa
 describe('CreatePaymentLinkUsecase', () => {
   let productsRepository: MemoryProductsRepository
   let paymentLinksRepository: MemoryPaymentLinksRepository
-  let btcAddressProvider: MemoryBtcAddressProvider
   let usecase: CreatePaymentLinkUsecase
 
   beforeEach(() => {
@@ -19,7 +17,6 @@ describe('CreatePaymentLinkUsecase', () => {
 
     productsRepository = (usecase as any).productsRepository
     paymentLinksRepository = (usecase as any).paymentLinksRepository
-    btcAddressProvider = (usecase as any).btcAddressProvider
   })
 
   it('should create a new payment link for a valid product', async () => {

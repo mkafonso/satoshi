@@ -12,5 +12,9 @@ export function makeGetSystemStatusUsecase(
   const statusProvider =
     props.statusProvider ?? new MemorySystemStatusProvider()
 
-  return new GetSystemStatusUsecase(statusProvider)
+  const usecase = new GetSystemStatusUsecase(statusProvider)
+
+  ;(usecase as any).systemStatusProvider = statusProvider
+
+  return usecase
 }
