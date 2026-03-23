@@ -3,7 +3,7 @@ import { HowItWorks } from '@/modules/landing/how-it-works/components/how-it-wor
 
 export default function Page() {
 	return (
-		<div className="space-y-20 pb-40">
+		<div className="pb-40">
 			<HeroSection />
 			<HowItWorks />
 		</div>
