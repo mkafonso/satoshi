@@ -12,7 +12,7 @@ export function HeroCheckoutPreview() {
 			className="relative flex justify-center w-full"
 		>
 			<div className="relative z-10 max-w-sm w-full">
-				<Card className="p-6 rounded-xl bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl max-w-md">
+				<Card className="p-6 rounded-xl bg-white/70 dark:bg-muted/40 backdrop-blur-xl shadow-2xl max-w-md">
 					<CardContent className="p-0">
 						<div className="flex justify-between items-start mb-8">
 							<div>

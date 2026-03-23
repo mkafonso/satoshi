@@ -7,7 +7,7 @@ import { HeroCTA } from './hero-cta'
 
 export function HeroSection() {
 	return (
-		<section className="relative py-20 overflow-hidden">
+		<section className="relative py-20 md:py-36 overflow-hidden">
 			<div className="absolute top-0 right-0 -z-10 w-2/3 h-full bg-gradient-to-br from-blue-600/5 to-violet-600/10 blur-3xl opacity-50 rounded-full translate-x-1/3 -translate-y-1/4" />
 			<div className="absolute bottom-0 left-0 -z-10 w-1/2 h-1/2 bg-gradient-to-tr from-emerald-500/5 to-blue-500/10 blur-3xl opacity-30 rounded-full -translate-x-1/4 translate-y-1/4" />
 

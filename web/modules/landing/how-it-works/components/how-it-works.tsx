@@ -6,7 +6,7 @@ import { StepCard } from './step-card'
 
 export function HowItWorks() {
 	return (
-		<div className="bg-muted py-20">
+		<div className="bg-muted dark:bg-muted/40 py-20 md:py-36">
 			<div className="container mx-auto px-4 md:px-0 ">
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}
