@@ -39,3 +39,29 @@ export const features: Feature[] = [
 		className: 'md:col-span-8 bg-secondary text-white',
 	},
 ]
+
+export const checkoutFeature = {
+	badge: 'Use Case Preview',
+	title: 'The ultimate checkout experience.',
+	description:
+		"We've optimized every pixel of the payment flow to ensure your customers never abandon their carts. From Lightning support to clear confirmation statuses.",
+	bullets: [
+		'Optimized for Mobile Conversion',
+		'Lightning & On-chain Automatic Detection',
+		'Zero-Conf support for small payments',
+	],
+}
+
+export const checkoutPreview = {
+	product: {
+		name: 'Satoshi Series One — Midnight',
+		description: 'Limited Edition Mechanical Watch',
+		status: 'In Stock',
+		image: 'https://m.media-amazon.com/images/I/51YcmA4AciL._AC_SX679_.jpg',
+	},
+	payment: {
+		amount: '0.00512 BTC',
+		network: 'Bitcoin Mainnet',
+		txid: '4a5e1e...9d8e',
+	},
+}
