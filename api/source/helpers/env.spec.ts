@@ -8,6 +8,7 @@ describe('env validation', () => {
     expect(result).toEqual({
       PORT: 3001,
       NODE_ENV: 'dev',
+      PAYMENT_LINK_EXPIRES_IN_MINUTES: 15,
     })
   })
 
@@ -15,11 +16,13 @@ describe('env validation', () => {
     const result = parseEnv({
       PORT: '4000',
       NODE_ENV: 'prd',
+      PAYMENT_LINK_EXPIRES_IN_MINUTES: '30',
     })
 
     expect(result).toEqual({
       PORT: 4000,
       NODE_ENV: 'prd',
+      PAYMENT_LINK_EXPIRES_IN_MINUTES: 30,
     })
   })
 
@@ -43,5 +46,19 @@ describe('env validation', () => {
     })
 
     expect(result.PORT).toBe(1234)
+  })
+
+  it('should use default for PAYMENT_LINK_EXPIRES_IN_MINUTES when not provided', () => {
+    const result = parseEnv({})
+
+    expect(result.PAYMENT_LINK_EXPIRES_IN_MINUTES).toBe(15)
+  })
+
+  it('should parse PAYMENT_LINK_EXPIRES_IN_MINUTES to number', () => {
+    const result = parseEnv({
+      PAYMENT_LINK_EXPIRES_IN_MINUTES: '30',
+    })
+
+    expect(result.PAYMENT_LINK_EXPIRES_IN_MINUTES).toBe(30)
   })
 })
